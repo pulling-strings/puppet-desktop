@@ -7,5 +7,4 @@ summary 'Misc Ubuntu desktop setup'
 description 'Desktop specific setup'
 project_page ''
 
-## Add dependencies, if any:
-# dependency 'username/name', '>= 1.2.0'
+dependency 'attachmentgenie-ufw', '>= 1.4.9'
