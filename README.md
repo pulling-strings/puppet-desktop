@@ -1,6 +1,6 @@
 # Intro 
 
-This module sets common desktop software such as Xmonda, Tor, X2go etc..
+This module sets common desktop software such as Xmonad, Tor, X2go etc..
 
 # Copyright and license
 
