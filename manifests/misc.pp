@@ -15,8 +15,12 @@ class desktop::misc(
   }
 
   if($scanner != ''){
+    package{'libsane':
+      ensure  => present
+    } ->
+
     file_line { 'saned remote scanner':
-      path => '/etc/sand.d/net.conf',
+      path => '/etc/sane.d/net.conf',
       line => $scanner
     }
   }
