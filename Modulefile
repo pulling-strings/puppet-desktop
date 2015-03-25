@@ -7,4 +7,3 @@ summary 'Misc Ubuntu desktop setup'
 description 'Desktop specific setup'
 project_page ''
 
-dependency 'attachmentgenie-ufw', '>= 1.4.9'
