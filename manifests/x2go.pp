@@ -10,10 +10,9 @@ class desktop::x2go($server=false, $lan='0.0.0.0') {
       ensure  => present,
       require => Apt::Ppa['ppa:x2go/stable']
     }
-    ufw::allow { 'ssh port':
-      port => '22',
-      from => $lan,
-    }
+
+    ensure_resource('ufw::allow','ssh port', {port => '22', from => $lan})
+
   } else {
     package{'x2goclient':
       ensure  => present
