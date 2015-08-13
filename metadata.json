@@ -1,0 +1,27 @@
+{
+  "name": "strings-desktop",
+  "version": "0.1.0",
+  "author": "Narkis Ronen <narkisr@gmail.com>",
+  "summary": "Desktop setup",
+  "license": "Apache V2",
+  "source": "https://github.com/pulling-strings/puppet-desktop",
+  "project_page": "https://github.com/pulling-strings/puppet-desktop",
+  "issues_url": "https://github.com/pulling-strings/puppet-desktop/issues",
+  "description": "Module for setting up Ubuntu desktop",
+  "tags": [
+    "desktop",
+    "x2go"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "15.04"
+      ]
+    }
+  ],
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">=2.2.1 <5.0.0" },
+    {"name":"puppetlabs/apt","version_requirement":">=2.1.1" }
+  ]
+}
