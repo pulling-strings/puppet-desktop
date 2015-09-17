@@ -5,7 +5,9 @@ class desktop::x2go(
   $port = '22'
 ) {
 
-  apt::ppa {'ppa:x2go/stable': }
+  apt::ppa {'ppa:x2go/stable':
+    package_manage => true
+  }
 
   if($server == true){
     Class['apt::update'] ->
