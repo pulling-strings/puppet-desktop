@@ -6,7 +6,6 @@ class desktop::x2go(
 ) {
 
   apt::ppa {'ppa:x2go/stable':
-    package_manage => true
   }
 
   if($server == true){
