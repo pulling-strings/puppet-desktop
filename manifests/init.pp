@@ -6,7 +6,6 @@ class desktop($user=false,$home=false) {
 
   if($desktop::is_desktop == 'true'){
     include desktop::misc
-    include desktop::tor
     include desktop::xmonad
     include desktop::chrome
 
