@@ -8,7 +8,7 @@ class desktop::xmonad {
     owner => $desktop::user
   }
 
-  if $::osfamily == 'Debian'
+  if $::osfamily == 'Debian' {
     package{['xmonad','ghc','libghc-xmonad-contrib-dev','xubuntu-desktop']:
       ensure  => present
     } -> Exec['xmonad --recompile']
@@ -22,7 +22,7 @@ class desktop::xmonad {
 
   exec{'xmonad --recompile':
     user        => 'root',
-    path        => ['/usr/bin','/bin'],
+    path        => ['/usr/bin','/bin','/usr/local/bin/'],
     creates     => "${xmonad}/xmonad.o",
     environment => "HOME=${desktop::home}",
     require     => Git::Clone[$xmonad]
