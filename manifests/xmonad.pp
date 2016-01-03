@@ -8,9 +8,17 @@ class desktop::xmonad {
     owner => $desktop::user
   }
 
-  package{['xmonad','ghc','libghc-xmonad-contrib-dev','xubuntu-desktop']:
-    ensure  => present
-  } ->
+  if $::osfamily == 'Debian'
+    package{['xmonad','ghc','libghc-xmonad-contrib-dev','xubuntu-desktop']:
+      ensure  => present
+    } -> Exec['xmonad --recompile']
+
+  } elsif $::osfamily == 'FreeBSD' {
+    package{['hs-xmonad-0.11.1', 'hs-xmonad-contrib-0.11.4']:
+      ensure  => present
+    } -> Exec['xmonad --recompile']
+
+  }
 
   exec{'xmonad --recompile':
     user        => 'root',
