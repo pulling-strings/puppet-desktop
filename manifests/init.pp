@@ -9,6 +9,7 @@ class desktop($user=false,$home=false) {
       include desktop::misc
       include desktop::xmonad
       include desktop::chrome
+      include desktop::atom
 
       package{'gparted':
         ensure  => present
