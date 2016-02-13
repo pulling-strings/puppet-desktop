@@ -15,6 +15,7 @@ class desktop($user=false,$home=false) {
       }
     } elsif $::operatingsystem == 'FreeBSD' {
       include desktop::xmonad
+      include desktop::chrome
     }
   }
 }
