@@ -8,11 +8,12 @@ class desktop::chrome {
     } ->
 
     apt::source{'google-chrome':
-      location    => 'http://dl.google.com/linux/chrome/deb/',
-      release     => 'stable',
-      repos       => 'main',
-      include_src => false,
-      include_deb => true,
+      location     => 'http://dl.google.com/linux/chrome/deb/',
+      architecture => 'amd64',
+      release      => 'stable',
+      repos        => 'main',
+      include_src  => false,
+      include_deb  => true,
     } ->
 
     package{'google-chrome-stable':
