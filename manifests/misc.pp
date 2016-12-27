@@ -2,7 +2,7 @@
 class desktop::misc(
   $scanner = ''
 ){
-  package{['kupfer','vlc','recordmydesktop']:
+  package{'synapse':
       ensure  => present
   }
 
