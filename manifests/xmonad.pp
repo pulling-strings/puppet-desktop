@@ -21,7 +21,7 @@ class desktop::xmonad {
   }
 
   exec{'xmonad --recompile':
-    user        => 'root',
+    user        => $desktop::user,
     path        => ['/usr/bin','/bin','/usr/local/bin/'],
     creates     => "${xmonad}/xmonad.o",
     environment => "HOME=${desktop::home}",
