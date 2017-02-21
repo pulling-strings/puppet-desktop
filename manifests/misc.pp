@@ -2,7 +2,7 @@
 class desktop::misc(
   $scanner = ''
 ){
-  package{'synapse':
+  package{['synapse', 'vlc']:
       ensure  => present
   }
 
