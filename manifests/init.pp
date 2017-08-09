@@ -1,5 +1,9 @@
 # setting up a desktop installation
-class desktop($user=false,$home=false) {
+class desktop(
+  $user=false,
+  $home=false,
+  $cleanup=false
+) {
 
   validate_string($user)
   validate_string($home)
@@ -11,9 +15,6 @@ class desktop($user=false,$home=false) {
       include desktop::chrome
       include desktop::cleanup
 
-      package{'gparted':
-        ensure  => present
-      }
     } elsif $::operatingsystem == 'FreeBSD' {
       include desktop::xmonad
       include desktop::chrome
