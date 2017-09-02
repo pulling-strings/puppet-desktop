@@ -2,8 +2,13 @@
 class desktop::misc(
   $scanner = ''
 ){
-  package{['synapse', 'vlc', 'ttyrecord']:
+  package{['vlc', 'ttyrec']:
       ensure  => present
+  }
+
+  package{'ttygif':
+    ensure  => present,
+    require => Apt::Source['barbecue']
   }
 
   editfile::config { 'disable apport':
@@ -27,20 +32,6 @@ class desktop::misc(
 
   package{['gparted',  'gnome-disk-utility']:
     ensure  => present
-  }
-
-  if($::desktop::cleanup == true){
-      $libreoffice = ['libreoffice-base-core', 'libreoffice-common', 'libreoffice-core',
-                      'libreoffice-gtk', 'libreoffice-math', 'libreoffice-style-elementary',
-                      'libreoffice-style-galaxy', 'libreoffice-writer', 'libreoffice-calc']
-
-    package{$libreoffice:
-      ensure  => absent
-    }
-
-    package{['thunderbird','pidgin', 'parole', 'flashplugin-installer']:
-      ensure  => absent
-    }
   }
 
 }
