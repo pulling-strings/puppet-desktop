@@ -2,7 +2,7 @@
 class desktop::misc(
   $scanner = ''
 ){
-  package{['vlc', 'ttyrec']:
+  package{['vlc', 'ttyrec', 'sysstat']:
       ensure  => present
   }
 
