@@ -2,13 +2,8 @@
 class desktop::misc(
   $scanner = ''
 ){
-  package{['vlc', 'ttyrec', 'sysstat', 'gifsycle']:
+  package{['vlc', 'sysstat']:
       ensure  => present
-  }
-
-  package{'ttygif':
-    ensure  => present,
-    require => Apt::Source['barbecue']
   }
 
   editfile::config { 'disable apport':

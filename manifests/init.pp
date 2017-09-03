@@ -2,7 +2,8 @@
 class desktop(
   $user=false,
   $home=false,
-  $cleanup=false
+  $cleanup=false,
+  $gif=false
 ) {
 
   validate_string($user)
@@ -11,6 +12,9 @@ class desktop(
   if $desktop::is_desktop == 'true' {
     if $::operatingsystem == 'Ubuntu' {
       include desktop::misc
+      if $::gif == true {
+        include desktop::gif
+      }
       include desktop::xmonad
       include desktop::chrome
       include desktop::cleanup
