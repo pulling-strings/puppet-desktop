@@ -2,7 +2,7 @@
 class desktop::misc(
   $scanner = ''
 ){
-  package{['vlc', 'sysstat']:
+  package{['vlc', 'sysstat', 'gnome-terminal']:
       ensure  => present
   }
 

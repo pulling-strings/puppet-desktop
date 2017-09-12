@@ -24,6 +24,11 @@ class desktop::cleanup {
     package{['thunderbird','pidgin', 'parole', 'flashplugin-installer']:
       ensure  => absent
     }
+
+    file{["/home/${::user}/Public", "/home/${::user}/Videos"
+          , "/home/${::user}/Pictures", "/home/${::user}/Templates", "/home/${::user}/Music"]:
+      ensure => absent,
+    }
   }
 
 
