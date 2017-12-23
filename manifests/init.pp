@@ -16,6 +16,7 @@ class desktop(
         include desktop::gif
       }
       include desktop::xmonad
+      include desktop::xfce
       include desktop::chrome
       include desktop::cleanup
 
