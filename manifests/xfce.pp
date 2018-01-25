@@ -5,7 +5,7 @@ class desktop::xfce {
   file{"${::desktop::home}/${dest}":
     ensure => file,
     mode   => '0644',
-    source => 'puppet:///modules/destkop/xfce4-keyboard-shortcuts.xml',
+    source => 'puppet:///modules/desktop/xfce4-keyboard-shortcuts.xml',
     owner  => root,
     group  => root,
   }
