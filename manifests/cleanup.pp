@@ -1,15 +1,19 @@
 # cleaning up un-used packages
-class desktop::cleanup {
+class desktop::cleanup(
+  $atom = false
+){
   package{['kupfer','recordmydesktop']:
     ensure  => absent
   }
 
-  package { 'atom':
-    ensure => absent,
-  } ->
+  if($atom == true) {
+    package { 'atom':
+      ensure => absent,
+    }
 
-  apt::ppa { 'ppa:webupd8team/atom':
-    ensure => absent
+    -> apt::ppa { 'ppa:webupd8team/atom':
+      ensure => absent
+    }
   }
 
   if($::desktop::cleanup == true){
