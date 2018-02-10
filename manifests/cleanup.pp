@@ -29,8 +29,8 @@ class desktop::cleanup(
       ensure  => absent
     }
 
-    file{["/home/${::user}/Public", "/home/${::user}/Videos"
-          , "/home/${::user}/Pictures", "/home/${::user}/Templates", "/home/${::user}/Music"]:
+    file{["/home/${::desktop::user}/Public", "/home/${::desktop::user}/Videos"
+          , "/home/${::desktop::user}/Pictures", "/home/${::desktop::user}/Templates", "/home/${::desktop::user}/Music"]:
       ensure => absent,
     }
   }
