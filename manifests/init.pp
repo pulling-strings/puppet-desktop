@@ -1,18 +1,15 @@
 # setting up a desktop installation
 class desktop(
-  $user=false,
-  $home=false,
-  $cleanup=false,
-  $gif=false
+  String $user='',
+  String $home='',
+  Boolean $cleanup=false,
+  Boolean $gif=false
 ) {
-
-  validate_string($user)
-  validate_string($home)
 
   if $desktop::is_desktop == 'true' {
     if $::operatingsystem == 'Ubuntu' {
       include desktop::misc
-      if $::gif == true {
+      if $gif == true {
         include desktop::gif
       }
       include desktop::xmonad
