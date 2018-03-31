@@ -16,6 +16,7 @@ class desktop(
       include desktop::xfce
       include desktop::chrome
       include desktop::cleanup
+      include desktop::harden
 
     } elsif $::operatingsystem == 'FreeBSD' {
       include desktop::xmonad
